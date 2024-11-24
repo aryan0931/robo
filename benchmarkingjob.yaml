@@ -2,11 +2,11 @@ benchmarkingjob:
   # job name of bechmarking; string type;
   name: "benchmarkingjob"
   # the url address of job workspace that will reserve the output of tests; string type;
-  workspace: "./ianvs-workspace/mdil-ss/lifelong_learning_bench"
+  workspace: "/ianvs/lifelong_learning_bench/robot-workspace-test"
 
   # the url address of test environment configuration file; string type;
   # the file format supports yaml/yml;
-  testenv: "./examples/class_increment_semantic_segmentation/lifelong_learning_bench/testenv/testenv.yaml"
+  testenv: "./examples/robot/lifelong_learning_bench/testenv/testenv-robot.yaml"
 
   # the configuration of test object
   test_object:
@@ -16,10 +16,10 @@ benchmarkingjob:
     # test algorithm configuration files; list type;
     algorithms:
       # algorithm name; string type;
-      - name: "erfnet_lifelong_learning"
+      - name: "rfnet_lifelong_learning"
         # the url address of test algorithm configuration file; string type;
         # the file format supports yaml/yml
-        url: "./examples/class_increment_semantic_segmentation/lifelong_learning_bench/testalgorithms/erfnet/test_algorithm.yaml"
+        url: "./examples/robot/lifelong_learning_bench/testalgorithms/rfnet/rfnet_algorithm-simple.yaml"
 
   # the configuration of ranking leaderboard
   rank:
@@ -57,10 +57,15 @@ benchmarkingjob:
       # currently the options of value are as follows:
       #   1> "all": select all metrics in the leaderboard;
       #   2> metrics in the leaderboard, e.g., "F1_SCORE"
-      metrics: [ "accuracy", "BWT", "FWT"]
+      metrics: [ "accuracy", "task_avg_acc", "BWT", "FWT"]
 
     # model of save selected and all dataitems in workspace `./rank` ; string type;
     # currently the options of value are as follows:
     #  1> "selected_and_all": save selected and all dataitems;
     #  2> "selected_only": save selected dataitems;
     save_mode: "selected_and_all"
+
+
+
+
+
