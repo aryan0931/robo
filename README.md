@@ -107,7 +107,7 @@ Dataset/
 ```shell
 mkdir dataset
 cd dataset
-unzip stl-dataset.zip
+unzip dataset.zip
 ```  
 
 Update the dataset's **URL address** in the `testenv.yaml` configuration file. More details can be found in the [testenv.yaml guide](https://ianvs.readthedocs.io/en/latest/guides/how-to-test-algorithms.html#step-1-test-environment-preparation).  
