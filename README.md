@@ -48,49 +48,51 @@ python setup.py install
 
 ## Step 2. Dataset Preparation
 
- ├── 1280x760
- │   ├── gtFine
- │   │   ├── test
- │   │   ├── train
- │   │   └── val
- │   ├── rgb
- │   │   ├── test
- │   │   ├── train
- │   │   └── val
- │   └── viz
- │       ├── test
- │       ├── train
- │       └── val
- ├── 2048x1024
- │   ├── gtFine
- │   │   ├── test
- │   │   ├── train
- │   │   └── val
- │   ├── rgb
- │   │   ├── test
- │   │   ├── train
- │   │   └── val
- │   └── viz
- │       ├── test
- │       ├── train
- │       └── val
- └── 640x480
-     ├── gtFine
-     │   ├── test
-     │   ├── train
-     │   └── val
-     ├── json
-     │   ├── test
-     │   ├── train
-     │   └── val
-     ├── rgb
-     │   ├── test
-     │   ├── train
-     │   └── val
-     └── viz
-         ├── test
-         ├── train
-         └── val
+Dataset/
+├── 1280x760
+│   ├── gtFine
+│   │   ├── train
+│   │   ├── test
+│   │   └── val
+│   ├── rgb
+│   │   ├── train
+│   │   ├── test
+│   │   └── val
+│   └── viz
+│       ├── train
+│       ├── test
+│       └── val
+├── 2048x1024
+│   ├── gtFine
+│   │   ├── train
+│   │   ├── test
+│   │   └── val
+│   ├── rgb
+│   │   ├── train
+│   │   ├── test
+│   │   └── val
+│   └── viz
+│       ├── train
+│       ├── test
+│       └── val
+├── 640x480
+    ├── gtFine
+    │   ├── train
+    │   ├── test
+    │   └── val
+    ├── json
+    │   ├── train
+    │   ├── test
+    │   └── val
+    ├── rgb
+    │   ├── train
+    │   ├── test
+    │   └── val
+    └── viz
+        ├── train
+        ├── test
+        └── val
+
 
 Datasets and models can be large. To avoid over-size projects in the Github repository of Ianvs, the Ianvs code base does
 not include origin datasets. Then developers do not need to download non-necessary datasets for a quick start.
