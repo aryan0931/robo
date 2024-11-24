@@ -138,12 +138,3 @@ Once the benchmarking job completes, the results will be displayed in the consol
 
 ---
 
-## What is Next?  
-
-If you encounter any issues, refer to [the GitHub issue page](https://github.com/kubeedge/ianvs/issues) for help. You’re welcome to raise any new issues or contribute to Ianvs.  
-
-Enjoy your Single Task Learning journey with Ianvs! 🚀  
-
----  
-
-Let me know if any further adjustments are needed! 😊
