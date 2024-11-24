@@ -2,11 +2,11 @@ benchmarkingjob:
   # job name of bechmarking; string type;
   name: "benchmarkingjob"
   # the url address of job workspace that will reserve the output of tests; string type;
-  workspace: "/ianvs/lifelong_learning_bench/robot-workspace-test"
+  workspace: "/ianvs/single_task_learning/cloud"
 
   # the url address of test environment configuration file; string type;
   # the file format supports yaml/yml;
-  testenv: "./examples/robot/lifelong_learning_bench/testenv/testenv-robot.yaml"
+  testenv: "./examples/cloud_robot/single_task_learning/testenv/testenv.yaml"
 
   # the configuration of test object
   test_object:
@@ -16,10 +16,10 @@ benchmarkingjob:
     # test algorithm configuration files; list type;
     algorithms:
       # algorithm name; string type;
-      - name: "rfnet_lifelong_learning"
+      - name: "rfnet_singletask_learning"
         # the url address of test algorithm configuration file; string type;
         # the file format supports yaml/yml
-        url: "./examples/robot/lifelong_learning_bench/testalgorithms/rfnet/rfnet_algorithm-simple.yaml"
+        url: "./examples/cloud-robotics/single_task_learning/testalgorithm/rfnet/algorithm.yaml"
 
   # the configuration of ranking leaderboard
   rank:
