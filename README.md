@@ -1,4 +1,4 @@
-Here's the updated **Quick Start Guide** with the final output table removed:  
+ 
 
 ---
 
