@@ -130,7 +130,7 @@ Update the algorithm's **URL address** in the `algorithm.yaml` file. Refer to th
 Run Ianvs for benchmarking:  
 ```shell
 cd /ianvs/project
-ianvs -f examples/robot-cityscapes-synthia/single_task_learning/semantic-segmentation/benchmarkingjob.yaml
+ianvs -f examples/cloud-robotics/single_task_learning/semantic-segmentation/benchmarkingjob.yaml
 ```  
 
 ### View Results  
