@@ -1,53 +1,62 @@
-# Quick Start about Class Incremental Semantic Segmentation
+Here's an updated version of the quick start guide tailored for **Single Task Learning (STL)** in Ianvs:
 
-Welcome to Ianvs! Ianvs aims to test the performance of distributed synergy AI solutions following recognized standards, 
-in order to facilitate more efficient and effective development. This  semantic segmentation scenario quick start guides you how to test your class incremental algorithm on Ianvs. You can reduce manual procedures to just a few steps so that you can 
-build and start your distributed synergy AI solution development within minutes. 
+---
 
-Before using Ianvs, you might want to have the device ready: 
-- One machine is all you need, i.e., a laptop or a virtual machine is sufficient and a cluster is not necessary
-- 2 CPUs or more
-- 4GB+ free memory, depends on algorithm and simulation setting
-- 10GB+ free disk space
-- Internet connection for GitHub and pip, etc
+# Quick Start about Single Task Learning Semantic Segmentation
+
+Welcome to Ianvs! Ianvs is a benchmarking platform designed to evaluate the performance of distributed synergy AI solutions in accordance with recognized standards. This quick start guide will help you test your **Single Task Learning (STL)** algorithm on Ianvs. By following these streamlined steps, you can efficiently develop and benchmark your solution within minutes.
+
+### **Prerequisites**
+Before using Ianvs, ensure that your system meets the following requirements:
+- A single machine (a laptop or a virtual machine is sufficient; no cluster is needed)
+- At least 2 CPUs
+- 4GB+ of free memory (depending on the algorithm and simulation settings)
+- 10GB+ of free disk space
+- An internet connection for accessing GitHub, pip, etc.
 - Python 3.6+ installed
 
+This guide assumes you are using **Linux** with Python 3.8. If you’re on Windows, most steps will apply, but some commands and package requirements may differ.
 
-In this example, we are using the Linux platform with Python 3.8. If you are using Windows, most steps should still apply but a few like commands and package requirements might be different. 
+---
 
-## Step 1. Ianvs Preparation
+## Step 1. Ianvs Installation
 
-First, we download the code of Ianvs. Assuming that we are using `/ianvs` as workspace, Ianvs can be cloned with `Git`
-as:
-
-``` shell
+### Clone Ianvs
+First, set up a workspace and clone Ianvs:
+```shell
 mkdir /ianvs
-cd /ianvs # One might use another path preferred
+cd /ianvs
 
 mkdir project
 cd project
-git clone https://github.com/kubeedge/ianvs.git   
+git clone https://github.com/kubeedge/ianvs.git
 ```
 
-
-Then, we install third-party dependencies for ianvs. 
-``` shell
+### Install Dependencies
+Next, install the required third-party dependencies:
+```shell
 sudo apt-get update
 sudo apt-get install libgl1-mesa-glx -y
 python -m pip install --upgrade pip
 
-cd ianvs 
+cd ianvs
 python -m pip install ./examples/resources/third_party/*
 python -m pip install -r requirements.txt
 ```
 
-We are now ready to install Ianvs. 
-``` shell
-python setup.py install  
+### Install Ianvs
+Finally, install Ianvs:
+```shell
+python setup.py install
 ```
+
+---
 
 ## Step 2. Dataset Preparation
 
+Organize the dataset for STL as shown below:
+
+```plaintext
 Dataset/
 ├── 1280x760
 │   ├── gtFine
@@ -92,67 +101,53 @@ Dataset/
         ├── train
         ├── test
         └── val
+```
 
-
-Datasets and models can be large. To avoid over-size projects in the Github repository of Ianvs, the Ianvs code base does
-not include origin datasets. Then developers do not need to download non-necessary datasets for a quick start.
-
-``` shell
+### Dataset Preparation Command
+```shell
 mkdir dataset
 cd dataset
-unzip mdil-ss.zip
+unzip stl-dataset.zip
 ```
 
-The URL address of this dataset then should be filled in the configuration file ``testenv.yaml``. In this quick start,
-we have done that for you and the interested readers can refer to [testenv.yaml](https://ianvs.readthedocs.io/en/latest/guides/how-to-test-algorithms.html#step-1-test-environment-preparation) for more details.
+Update the dataset's **URL address** in the `testenv.yaml` configuration file. More details can be found in the [testenv.yaml guide](https://ianvs.readthedocs.io/en/latest/guides/how-to-test-algorithms.html#step-1-test-environment-preparation).
 
+---
 
-Related algorithm is also ready in this quick start. 
+## Step 3. Configure Algorithm
 
-``` shell
-export PYTHONPATH=$PYTHONPATH:/ianvs/project/examples/robot-cityscapes-synthia/lifelong_learning_bench/semantic-segmentation/testalgorithms/erfnet/ERFNet
+Export the path for the STL algorithm, e.g., ERFNet:
+```shell
+export PYTHONPATH=$PYTHONPATH:/ianvs/project/examples/robot-cityscapes-synthia/single_task_learning/semantic-segmentation/testalgorithms/erfnet/ERFNet
 ```
 
-The URL address of this algorithm then should be filled in the configuration file ``algorithm.yaml``. In this quick
-start, we have done that for you and the interested readers can refer to [algorithm.yaml](https://ianvs.readthedocs.io/en/latest/guides/how-to-test-algorithms.html#step-1-test-environment-preparation) for more details.
+Update the algorithm's **URL address** in the `algorithm.yaml` file. Refer to the [algorithm.yaml guide](https://ianvs.readthedocs.io/en/latest/guides/how-to-test-algorithms.html#step-1-test-environment-preparation) for detailed instructions.
 
+---
 
-## Step 3. Ianvs Execution and Presentation
+## Step 4. Ianvs Execution and Results
 
-We are now ready to run the ianvs for benchmarking. 
-
-``` shell
+Run Ianvs for benchmarking:
+```shell
 cd /ianvs/project
-ianvs -f examples/robot-cityscapes-synthia/lifelong_learning_bench/semantic-segmentation/benchmarkingjob.yaml
+ianvs -f examples/robot-cityscapes-synthia/single_task_learning/semantic-segmentation/benchmarkingjob.yaml
 ```
 
-Finally, the user can check the result of benchmarking on the console and also in the output path(
-e.g. `/ianvs/project/ianvs-workspace/mdil-ss/lifelong_learning_bench`) defined in the benchmarking config file (
-e.g. `benchmarkingjob.yaml`). In this quick start, we have done all configurations for you and the interested readers
-can refer to [benchmarkingJob.yaml](https://ianvs.readthedocs.io/en/latest/guides/how-to-test-algorithms.html#step-1-test-environment-preparation) for more details.
+### View Results
+Once the benchmarking job completes, the results will be displayed in the console and saved in the specified output path (e.g., `/ianvs/project/ianvs-workspace/stl/semantic-segmentation`). Refer to the `benchmarkingjob.yaml` file for the configuration details.
 
-The final output might look like this:   
+The results table will look similar to this:
 
-| rank |        algorithm         |          Task_Avg_Acc     |         BWT          |         FWT          |     paradigm     | basemodel |    task_definition     |    task_allocation     | basemodel-learning_rate | basemodel-epochs |           task_definition-origins           |           task_allocation-origins           |         time        |                                                                url                                                               |
-|:----:|:------------------------:|:--------------------:|:--------------------:|:--------------------:|:----------------:|:---------:|:----------------------:|:----------------------:|:-----------------------:|:----------------:|:-----------------------------------------:|:-----------------------------------------:|:-------------------:|:-------------------------------------------------------------------------------------------------------------------------------:|
-|  1   | erfnet_lifelong_learning |  0.027414088670437726 | 0.010395591126145793 | 0.002835451693721201 | lifelonglearning | BaseModel | TaskDefinitionByDomain | TaskAllocationByDomain |         0.0001          |        1         | ['Cityscapes', 'Synthia', 'Cloud-Robotics'] | ['Cityscapes', 'Synthia', 'Cloud-Robotics'] | 2023-09-26 20:13:21 | ./ianvs-workspace/mdil-ss/lifelong_learning_bench/benchmarkingjob/erfnet_lifelong_learning/3a8c73ba-5c64-11ee-8ebd-b07b25dd6922 |
+| rank |       algorithm       |   Accuracy   | paradigm  | basemodel | learning_rate | epochs |   dataset_origin   |         time        |                              url                              |
+|:----:|:---------------------:|:------------:|:---------:|:---------:|:-------------:|:------:|:------------------:|:-------------------:|:------------------------------------------------------------:|
+|  1   | erfnet_single_task    |     0.827    | single_task | ERFNet   |     0.0001    |   10   |      Cityscapes    | 2024-11-23 12:00:00 | ./ianvs-workspace/stl/semantic-segmentation/job/erfnet_stl/3a8c73ba |
 
+In the final output, you can also view the accuracy metrics for the STL tasks.
 
-In addition, in the log displayed at the end of the test, you can see the accuracy of known and unknown tasks in each round, as shown in the table below (in the testing phase of round 3, all classes are seen).
+---
 
+## What is Next?
 
-| Round | Seen Class Accuracy | Unseen Class Accuracy |
-|:-----:|:---------------------:|:-------------------:|
-|   1   |        0.176         |       0.0293        |
-|   2   |        0.203         |       0.0265        |
-|   3   |        0.311         |       0.0000        |
+If you encounter any issues, refer to [the GitHub issue page](https://github.com/kubeedge/ianvs/issues) for help. You’re welcome to raise any new issues or contribute to Ianvs.
 
-
-
-This ends the quick start experiment.
-
-# What is next
-
-If any problems happen, the user can refer to [the issue page on Github](https://github.com/kubeedge/ianvs/issues) for help and are also welcome to raise any new issue. 
-
-Enjoy your journey on Ianvs!
+Enjoy your Single Task Learning journey with Ianvs! 🚀
