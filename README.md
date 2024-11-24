@@ -118,7 +118,7 @@ Update the dataset's **URL address** in the `testenv.yaml` configuration file. M
 
 Export the path for the STL algorithm, e.g., ERFNet:  
 ```shell
-export PYTHONPATH=$PYTHONPATH:/ianvs/project/examples/robot-cityscapes-synthia/single_task_learning/semantic-segmentation/testalgorithms/erfnet/ERFNet
+export PYTHONPATH=$PYTHONPATH:/ianvs/examples/cloud-robotics/single_task_learning/testalgorithms
 ```  
 
 Update the algorithm's **URL address** in the `algorithm.yaml` file. Refer to the [algorithm.yaml guide](https://ianvs.readthedocs.io/en/latest/guides/how-to-test-algorithms.html#step-1-test-environment-preparation) for detailed instructions.  
