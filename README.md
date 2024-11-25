@@ -54,6 +54,10 @@ python setup.py install
 
 ## Step 2. Dataset Preparation  
 
+### Cloud-Robotics Dataset Summary
+
+The **Cloud-Robotics Dataset** features **annotated real-world images** with **dense semantic and instance segmentation** across **30 classes** in 7 groups (e.g., vehicles, humans, nature, objects). It includes polygonal annotations, diverse daytime scenes, dynamic objects, and varying layouts. Data is provided in a JSON format, making it ideal for pixel-level semantic labeling and benchmarking vision models for robotics.
+
 Organize the dataset for STL as shown below:  
 
 ```plaintext
