@@ -1,6 +1,6 @@
 algorithm:
   paradigm_type: "singletasklearning"
-  initial_model_url: "./models/530_exp3_2.pth"
+  initial_model_url: "./models/model.pth"
 
   modules:
     - type: "basemodel"
