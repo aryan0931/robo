@@ -127,10 +127,7 @@ Run Ianvs for benchmarking:
 ```shell
 cd /ianvs/project
 ianvs -f examples/cloud-robotics/single_task_learning/semantic-segmentation/benchmarkingjob.yaml
-```  
-
-### View Results  
-Once the benchmarking job completes, the results will be displayed in the console and saved in the specified output path (e.g., `/ianvs/project/ianvs-workspace/stl/semantic-segmentation`). Refer to the `benchmarkingjob.yaml` file for the configuration details.  
+```   
 
 ---
 
